@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import imgBannerBg from "../assets/banner.png";
+---
+
+<Layout title="Liên hệ hợp tác - One One">
+    <div class="bg-[#fff5e5] min-h-screen">
+        {/* Banner */}
+        <section class="relative h-[400px] lg:h-[550px] w-full mb-12">
+            <img
+                src={imgBannerBg.src}
+                alt="Partner Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div
+                class="relative container mx-auto h-full flex flex-col items-center justify-center text-white text-center"
+            >
+                <h2
+                    class="text-xl font-bold mb-4 uppercase tracking-widest text-[#f3f0e4]"
+                >
+                    DÀNH CHO ĐỐI TÁC
+                </h2>
+                <h1 class="text-5xl lg:text-7xl font-bold text-[#f3f0e4]">
+                    Liên hệ hợp tác
+                </h1>
+            </div>
+        </section>
+
+        {/* Introduction */}
+        <section class="container mx-auto px-4 py-12 max-w-4xl">
+            <div class="text-[#124734] text-lg leading-relaxed space-y-6">
+                <p>
+                    One One tự hào là thương hiệu bánh gạo hàng đầu tại Việt
+                    Nam, với gần 20 năm kinh nghiệm sản xuất và phân phối các
+                    sản phẩm chất lượng, hương vị độc đáo, được người tiêu dùng
+                    trên cả nước yêu thích.
+                </p>
+                <p>
+                    Chúng tôi không ngừng nỗ lực để mang đến những sản phẩm tốt
+                    nhất, đáp ứng nhu cầu ngày càng cao của thị trường và luôn
+                    tìm kiếm những đối tác để cùng nhau phát triển.
+                </p>
+                <p>
+                    Hãy trở thành đối tác phân phối của One One ngay hôm nay để
+                    cùng chúng tôi chinh phục thị trường bánh gạo đầy tiềm năng!
+                </p>
+
+                <div>
+                    <strong class="block text-xl mb-4 mt-8"
+                        >Các hình thức hợp tác</strong
+                    >
+                    <p class="mb-4">
+                        Hiện tại, One One đang tìm kiếm đối tác ở các hình thức
+                        sau:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Nhà phân phối độc quyền.</li>
+                        <li>Đại lý bán hàng.</li>
+                        <li>Cửa hàng bán lẻ.</li>
+                    </ul>
+                </div>
+
+                <p class="pt-4 font-medium italic">
+                    Để biết thêm chi tiết về từng hình thức hợp tác, vui lòng
+                    liên hệ với chúng tôi qua form bên dưới:
+                </p>
+            </div>
+        </section>
+
+        {/* Form */}
+        <section class="container mx-auto px-4 py-12 mb-20">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-[#124734] mb-8 text-center">
+                    Liên hệ hợp tác & bán hàng
+                </h2>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-[#124734] font-medium mb-2"
+                            >Họ và tên *</label
+                        >
+                        <input
+                            type="text"
+                            class="w-full bg-[#fcf9f2] border border-[#124734] rounded-[30px] px-6 py-4 outline-none focus:bg-white focus:ring-1 focus:ring-[#124734] transition-all"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block text-[#124734] font-medium mb-2"
+                            >Tên công ty/cửa hàng</label
+                        >
+                        <input
+                            type="text"
+                            class="w-full bg-[#fcf9f2] border border-[#124734] rounded-[30px] px-6 py-4 outline-none focus:bg-white focus:ring-1 focus:ring-[#124734] transition-all"
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block text-[#124734] font-medium mb-2"
+                            >Số điện thoại *</label
+                        >
+                        <input
+                            type="tel"
+                            class="w-full bg-[#fcf9f2] border border-[#124734] rounded-[30px] px-6 py-4 outline-none focus:bg-white focus:ring-1 focus:ring-[#124734] transition-all"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block text-[#124734] font-medium mb-2"
+                            >Email *</label
+                        >
+                        <input
+                            type="email"
+                            class="w-full bg-[#fcf9f2] border border-[#124734] rounded-[30px] px-6 py-4 outline-none focus:bg-white focus:ring-1 focus:ring-[#124734] transition-all"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block text-[#124734] font-medium mb-2"
+                            >Lời nhắn</label
+                        >
+                        <textarea
+                            rows="5"
+                            class="w-full bg-[#fcf9f2] border border-[#124734] rounded-[30px] px-6 py-4 outline-none focus:bg-white focus:ring-1 focus:ring-[#124734] transition-all resize-none"
+                        ></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button
+                            type="submit"
+                            class="w-full bg-[#124734] text-white font-bold py-4 rounded-[30px] hover:bg-[#0e3626] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                        >
+                            GỬI ĐẾN ONE ONE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</Layout>

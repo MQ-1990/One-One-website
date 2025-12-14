@@ -1,0 +1,231 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ChevronRight, MapPin } from "lucide-react";
+import imgBannerBg from "../../assets/banner.png";
+
+export function getStaticPaths() {
+    const jobs = [
+        { id: "1", title: "Nhân viên Marketing", location: "Hà Nội" },
+        {
+            id: "2",
+            title: "Chuyên viên phát triển sản phẩm",
+            location: "Hà Nội",
+        },
+        { id: "3", title: "Nhân viên tư vấn bán hàng", location: "TP HCM" },
+        { id: "4", title: "Công nhân sản xuất", location: "Long An" },
+        { id: "5", title: "Quản đốc phân xưởng sản xuất", location: "Long An" },
+    ];
+    return jobs.map((job) => ({
+        params: { id: job.id },
+        props: { job },
+    }));
+}
+
+const { job } = Astro.props;
+---
+
+<Layout title={`${job.title} - Tuyển dụng One One`}>
+    <div class="bg-[#fff5e5] min-h-screen">
+        {/* Banner */}
+        <section class="relative h-[400px] lg:h-[550px] w-full mb-12">
+            <img
+                src={imgBannerBg.src}
+                alt="Career Detail Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div
+                class="relative container mx-auto h-full flex flex-col items-center justify-center text-white text-center"
+            >
+                <h2
+                    class="text-xl font-bold mb-4 uppercase tracking-widest text-[#f3f0e4]"
+                >
+                    One One tuyển dụng
+                </h2>
+                <h1 class="text-4xl lg:text-6xl font-bold text-[#f3f0e4] px-4">
+                    {job.title}
+                </h1>
+            </div>
+        </section>
+
+        {/* Content */}
+        <section
+            class="container mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12"
+        >
+            {/* Main Content */}
+            <div class="lg:col-span-8 text-[#124734]">
+                <h2 class="text-3xl font-bold mb-2">{job.title}</h2>
+                <div class="flex items-center gap-2 text-[#799381] mb-8">
+                    <MapPin size={18} />
+                    <span>{job.location}</span>
+                </div>
+
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>
+                        Công ty Cổ phần Thực phẩm One One Miền Nam đang tìm kiếm
+                        các ứng viên năng động, nhiệt tình gia nhập đội ngũ của
+                        chúng tôi!
+                    </p>
+
+                    <div>
+                        <strong class="block mb-2 font-bold">1. Vị trí:</strong>
+                        <p>{job.title}</p>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >2. Địa điểm làm việc:</strong
+                        >
+                        <p>{job.location}</p>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >3. Thời gian làm việc:</strong
+                        >
+                        <p>Giờ hành chính hoặc theo ca tùy vị trí</p>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold">4. Yêu cầu:</strong
+                        >
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Giới tính: Nam/Nữ</li>
+                            <li>Độ tuổi: 18 - 40 tuổi</li>
+                            <li>Trình độ văn hóa: Tùy vị trí</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >5. Mô tả công việc:</strong
+                        >
+                        <p>Trao đổi cụ thể khi phỏng vấn</p>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >6. Quyền lợi:</strong
+                        >
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Thu nhập hấp dẫn: Thỏa thuận theo năng lực</li>
+                            <li>
+                                Môi trường làm việc: Chuyên nghiệp, năng động,
+                                thân thiện, có nhiều cơ hội thăng tiến.
+                            </li>
+                            <li>
+                                Chế độ phúc lợi: Đầy đủ theo quy định của pháp
+                                luật (BHXH, BHYT, BHTN, lương tháng 13, thưởng
+                                Tết, KPI...)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >7. Hồ sơ ứng tuyển:</strong
+                        >
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Đơn xin việc</li>
+                            <li>Sơ yếu lý lịch</li>
+                            <li>CMND/CCCD</li>
+                            <li>Xác nhận hạnh kiểm (do địa phương cấp)</li>
+                            <li>Xác nhận thông tin cư trú</li>
+                            <li>Giấy khám sức khỏe</li>
+                            <li>
+                                Các văn bằng, chứng chỉ liên quan (công chứng)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >8. Cách thức ứng tuyển:</strong
+                        >
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>
+                                Nộp hồ sơ trực tiếp: tại phòng Bảo vệ Công ty Cổ
+                                phần Thực phẩm One One Miền Nam
+                            </li>
+                            <li>
+                                Nộp hồ sơ qua email: tuyendung@oneone.com.vn
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="block mb-2 font-bold"
+                            >9. Hạn nộp hồ sơ:</strong
+                        >
+                        <p>28/02/2025</p>
+                    </div>
+
+                    <p class="italic">
+                        Lưu ý: Công ty sẽ liên hệ với ứng viên đạt yêu cầu để
+                        phỏng vấn qua điện thoại.
+                    </p>
+
+                    <p class="font-bold text-xl mt-8">
+                        One One Miền Nam - Nơi làm việc lý tưởng cho bạn!
+                    </p>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a
+                        href="#"
+                        class="inline-block border border-[#124734] text-[#124734] font-bold py-4 px-12 rounded-[30px] hover:bg-[#124734] hover:text-white transition-all uppercase tracking-wide"
+                    >
+                        NỘP HỒ SƠ ỨNG TUYỂN
+                    </a>
+                </div>
+            </div>
+
+            {/* Sidebar / Other Jobs */}
+            <div
+                class="lg:col-span-4 lg:pl-12 lg:border-l lg:border-[#124734]/20"
+            >
+                <h3 class="text-[#124734] text-2xl font-bold mb-8">
+                    Các vị trí khác
+                </h3>
+                <div class="space-y-4">
+                    {
+                        [
+                            {
+                                id: "1",
+                                title: "Nhân viên Marketing",
+                                loc: "Long An",
+                            },
+                            {
+                                id: "2",
+                                title: "Chuyên viên phát triển sản phẩm",
+                                loc: "Long An",
+                            },
+                            {
+                                id: "3",
+                                title: "Nhân viên tư vấn bán hàng",
+                                loc: "Long An",
+                            },
+                        ]
+                            .filter((j) => j.id !== job.id)
+                            .map((otherJob) => (
+                                <a
+                                    href={`/career/${otherJob.id}`}
+                                    class="block bg-[#e7e1cc]/50 p-6 rounded-xl hover:bg-[#e7e1cc] transition-colors group"
+                                >
+                                    <h4 class="font-bold text-[#124734] mb-2 group-hover:text-[#da203a] transition-colors">
+                                        {otherJob.title}
+                                    </h4>
+                                    <div class="flex justify-between items-center text-sm text-[#799381]">
+                                        <span class="flex items-center gap-1">
+                                            <MapPin size={14} /> {otherJob.loc}
+                                        </span>
+                                        <ChevronRight size={16} />
+                                    </div>
+                                </a>
+                            ))
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

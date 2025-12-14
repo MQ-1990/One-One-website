@@ -1,0 +1,30 @@
+---
+import { ArrowRight } from "lucide-react";
+import imgBannerDoitac1 from "../assets/partner-bg.png";
+---
+
+<section class="flex flex-col lg:flex-row min-h-[600px] w-full">
+  {/* Text Side */}
+  <div class="w-full lg:w-1/2 bg-[#124734] flex items-center justify-center p-12 lg:p-24 order-2 lg:order-1">
+    <div class="max-w-xl text-white">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8">Hợp tác phân phối One One</h2>
+        <p class="text-lg leading-relaxed opacity-90 mb-12">
+            One One luôn là thương hiệu bánh gạo dẫn đầu thị trường, chinh phục người tiêu dùng nhờ chất lượng vượt trội và sự tự nhiên trong từng sản phẩm. 
+            Hãy trở thành đại lý phân phối của chúng tôi để cùng nhau mang đến những giá trị lành mạnh cho mọi gia đình Việt Nam và vươn xa ra thế giới.
+        </p>
+        
+        <a href="/partner" class="inline-flex items-center gap-4 text-xl font-bold border-b-2 border-white pb-2 hover:text-[#da203a] hover:border-[#da203a] transition-colors">
+            Liên hệ hợp tác <ArrowRight className="w-6 h-6" />
+        </a>
+    </div>
+  </div>
+
+  {/* Image Side */}
+  <div class="w-full lg:w-1/2 h-[400px] lg:h-auto relative order-1 lg:order-2">
+    <img 
+        src={imgBannerDoitac1.src} 
+        alt="Partner" 
+        class="absolute inset-0 w-full h-full object-cover" 
+    />
+  </div>
+</section>

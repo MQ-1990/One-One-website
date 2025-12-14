@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import imgBannerBg from "../assets/promo-banner.png";
+import imgBannerKhuyenmai1 from "../assets/promo-detail.png";
+---
+
+<Layout title="Tin khuyến mãi - One One">
+    <div class="bg-[#fff5e5] min-h-screen">
+      {/* Banner */}
+      <section class="relative h-[400px] w-full">
+        <img src={imgBannerBg.src} alt="Promotion Banner" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative container mx-auto h-full flex flex-col items-center justify-center text-white text-center">
+            <h2 class="text-2xl font-bold mb-2">ONE ONE CÓ GÌ HOT?</h2>
+            <h1 class="text-5xl lg:text-7xl font-bold">Tin khuyến mãi</h1>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section class="py-20 container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+              <h2 class="text-[#124734] text-3xl font-bold text-center mb-8">
+                  Mua 1 bánh gạo - Tặng 1 gói mì Zum Zum
+              </h2>
+              
+              <div class="bg-white p-8 rounded-2xl shadow-sm mb-12">
+                  <div class="text-[#124734] text-lg leading-relaxed space-y-6">
+                      <p>
+                          Bạn đã sẵn sàng để nhận ưu đãi hấp dẫn từ One One chưa? Từ 01/01/2025 đến 31/01/2025, chỉ cần mua 1 sản phẩm Bánh Gạo One One, bạn sẽ được tặng ngay 1 gói mì Zum Zum thơm ngon!
+                      </p>
+                      
+                      <div>
+                          <strong class="block mb-2">Đối tượng:</strong>
+                          <p>Áp dụng cho mọi khách hàng mua bánh gạo tại hệ thống siêu thị, cửa hàng tiện lợi và website chính thức của One One.</p>
+                      </div>
+
+                      <div>
+                          <strong class="block mb-2">Cách Tham Gia Chương Trình Khuyến Mãi:</strong>
+                          <p>Quý khách mua bất kỳ sản phẩm Bánh Gạo One One tại các siêu thị, cửa hàng tiện lợi, hoặc website chính thức của One One, sẽ nhận ngay 1 gói mì Zum Zum miễn phí đính kèm.</p>
+                      </div>
+
+                      <div>
+                          <strong class="block mb-2">Thời Gian và Điều Kiện Áp Dụng:</strong>
+                          <ul class="list-disc pl-6 space-y-2">
+                              <li>Thời gian: Từ 01/01/2025 đến 31/01/2025.</li>
+                              <li>Chỉ áp dụng tại các điểm bán được ủy quyền.</li>
+                              <li>Số lượng quà tặng có hạn, chương trình có thể kết thúc sớm khi hết quà.</li>
+                              <li>Không áp dụng cùng lúc với các chương trình khuyến mãi khác.</li>
+                          </ul>
+                      </div>
+                      
+                      <p>
+                          Đừng bỏ lỡ cơ hội thưởng thức Bánh Gạo One One giòn rụm, kết hợp cùng Mì Zum Zum thơm ngon!! Hãy đến ngay các cửa hàng hoặc đặt hàng trên website chính thức để nhận ưu đãi.
+                      </p>
+                  </div>
+              </div>
+
+              {/* Promo Image */}
+              <div class="rounded-[20px] overflow-hidden shadow-xl">
+                  <img src={imgBannerKhuyenmai1.src} alt="Khuyen Mai Detail" class="w-full h-auto" />
+              </div>
+          </div>
+      </section>
+    </div>
+</Layout>

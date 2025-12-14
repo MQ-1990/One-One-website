@@ -1,0 +1,56 @@
+---
+import { ArrowRight } from "lucide-react";
+import imgNumberBg1 from "../assets/stats-bg.png";
+import imgBanh01A1 from "../assets/stats-image.png";
+---
+
+<section class="relative bg-[#dbf3c3] py-20 overflow-hidden">
+  <div class="absolute bottom-0 left-0 w-full h-[60%] opacity-20 pointer-events-none">
+     <img src={imgNumberBg1.src} alt="Background Pattern" class="w-full h-full object-cover" />
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center max-w-4xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <span class="text-[#da203a]">One One</span> – Bánh gạo số 1 Việt Nam, vươn tầm thế giới
+      </h2>
+      <p class="text-lg text-[#124734] leading-relaxed">
+        Với <span class="font-bold">gần 2 thập kỷ</span> đồng hành cùng người tiêu dùng Việt, One One tự hào là <span class="font-bold">thương hiệu bánh gạo số 1 được chọn mua tại Việt Nam</span> (theo khảo sát Kantar). 
+        Sản phẩm của chúng tôi, từ nguồn nguyên liệu <span class="font-bold">Nông Sản Việt Nam</span> tự nhiên và chất lượng cao, 
+        đã chinh phục hơn <span class="font-bold">140,000 điểm bán trên toàn quốc</span> v�� xuất khẩu đến <span class="font-bold">12 quốc gia trên thế giới</span>.
+      </p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+        {/* Image */}
+        <div class="w-full max-w-[500px] flex-shrink-0">
+            <img src={imgBanh01A1.src} alt="One One Rice Cracker" class="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+        </div>
+
+        {/* Stats Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            <div class="text-center md:text-left">
+                <p class="text-[#124734] text-xl font-bold">Thương hiệu bánh gạo <span class="text-[#da203a] text-2xl">số 1</span> Việt Nam (Kantar)</p>
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-[#124734] text-xl font-bold"><span class="text-[#da203a] text-2xl">17 năm</span> đồng hành cùng người tiêu dùng Việt</p>
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-[#da203a] text-4xl font-bold mb-1">140,000</p>
+                <p class="text-[#124734] text-xl font-bold">điểm bán toàn quốc</p>
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-[#124734] text-xl font-bold">Có mặt tại <span class="text-[#da203a] text-2xl">12 quốc gia</span> trên thế giới</p>
+            </div>
+
+            <div class="md:col-span-2 pt-8 flex justify-center md:justify-start">
+                 <a href="/our-story" class="group flex items-center gap-2 text-[#124734] font-bold text-lg hover:text-[#da203a] transition-colors">
+                    Tìm hiểu thêm về One One
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <div class="h-px bg-[#124734] w-full absolute bottom-0 left-0 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                 </a>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

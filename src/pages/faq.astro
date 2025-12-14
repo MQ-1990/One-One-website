@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { FaqList } from "../components/react/FaqList";
+import imgBannerBg from "../assets/banner.png";
+---
+
+<Layout title="Hỏi đáp - One One">
+  <div class="bg-[#fff5e5] min-h-screen">
+    {/* Banner */}
+    <section class="relative h-[400px] lg:h-[550px] w-full mb-12">
+      <img
+        src={imgBannerBg.src}
+        alt="FAQ Banner"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div
+        class="relative container mx-auto h-full flex flex-col items-center justify-center text-white text-center"
+      >
+        <h2
+          class="text-xl font-bold mb-4 uppercase tracking-widest text-[#f3f0e4]"
+        >
+          One One - Càng ăn càng ngon!
+        </h2>
+        <h1 class="text-4xl lg:text-7xl font-bold text-[#f3f0e4]">
+          Hỏi đáp về One One
+        </h1>
+      </div>
+    </section>
+
+    {/* FAQ List */}
+    <section class="container mx-auto px-4 py-12 max-w-4xl">
+      <h2 class="text-[#124734] text-4xl font-bold text-center mb-16">
+        Câu hỏi thường gặp
+      </h2>
+      <FaqList client:load />
+    </section>
+  </div>
+</Layout>

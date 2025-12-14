@@ -1,0 +1,26 @@
+---
+import { Header } from "../components/Header";
+import Footer from "../components/Footer.astro";
+import "../styles/globals.css";
+
+const { title = "One One - Bánh gạo số 1 Việt Nam" } = Astro.props;
+---
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans text-[#124734] bg-white">
+    <Header client:load />
+    <main class="min-h-screen pt-[80px] lg:pt-[120px]">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

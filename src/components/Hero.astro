@@ -1,0 +1,31 @@
+---
+import imgBannerBg from "../assets/banner-mobile.png"; // Placeholder
+import imgBannerBgDesktop from "../assets/banner-desktop.png"; // Placeholder
+---
+
+<section class="relative h-[600px] md:h-[80vh] md:min-h-[600px] w-full overflow-hidden">
+  <div class="absolute inset-0">
+    <img 
+      src={imgBannerBg.src} 
+      alt="Banner Mobile" 
+      class="block md:hidden w-full h-full object-cover object-center"
+    />
+    <img 
+      src={imgBannerBgDesktop.src} 
+      alt="Banner" 
+      class="hidden md:block w-full h-full object-cover object-center"
+    />
+    <div class="absolute inset-0 bg-black/10"></div>
+  </div>
+  
+  <div class="relative h-full container mx-auto flex flex-col items-center justify-center text-white text-center pt-20 px-4 transition-all duration-300">
+    <div class="mb-6 inline-block bg-[#da203a]/80 backdrop-blur-sm px-6 py-2 md:px-8 md:py-3 rounded-full shadow-lg">
+      <span class="font-bold text-lg md:text-2xl tracking-wide">Bánh gạo One One</span>
+    </div>
+    
+    <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+      <span class="block mb-2">Thơm hương gạo tự nhiên</span>
+      <span class="block">Trọn vẹn niềm tin Việt</span>
+    </h1>
+  </div>
+</section>

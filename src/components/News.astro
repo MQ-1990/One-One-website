@@ -1,0 +1,73 @@
+---
+import imgBgBonglua1 from "../assets/news-bg-decor.png";
+import imgBlog031 from "../assets/blog/blog-1.png";
+import imgBlog021 from "../assets/blog/blog-2.png";
+import imgBlog011 from "../assets/blog/blog-3.png";
+
+const posts = [
+    {
+        id: 1,
+        title: "Bánh gạo One One và hành trình phát triển bền vững",
+        image: imgBlog011,
+    },
+    {
+        id: 2,
+        title: "Phản hồi từ người tiêu dùng: Bánh gạo One One có gì đặc biệt?",
+        image: imgBlog021,
+    },
+    {
+        id: 3,
+        title: "Trẻ Em Có Ăn Được Bánh Gạo One One Không?",
+        image: imgBlog031,
+    },
+];
+---
+
+<section class="bg-[#DBF2C3] py-24 relative overflow-hidden">
+    {/* Decorative Background Image */}
+    <div
+        class="absolute right-0 top-0 h-full w-[30%] pointer-events-none opacity-50 hidden lg:block"
+    >
+        <img
+            src={imgBgBonglua1.src}
+            alt="Decoration"
+            class="w-full h-full object-cover object-left"
+        />
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <h2
+            class="text-3xl md:text-5xl font-bold text-[#124734] text-center mb-16"
+        >
+            Cập nhật mới từ One One
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {
+                posts.map((post) => (
+                    <a href="/blog" class="group cursor-pointer">
+                        <div class="overflow-hidden rounded-2xl mb-6 shadow-lg aspect-[4/3]">
+                            <img
+                                src={post.image.src}
+                                alt={post.title}
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            />
+                        </div>
+                        <h3 class="text-xl font-medium text-[#124734] text-center group-hover:text-[#da203a] transition-colors line-clamp-2 px-4">
+                            {post.title}
+                        </h3>
+                    </a>
+                ))
+            }
+        </div>
+
+        <div class="flex justify-center">
+            <a
+                href="/blog"
+                class="border-2 border-[#124734] text-[#124734] px-10 py-3 rounded-full font-bold hover:bg-[#124734] hover:text-white transition-all duration-300 uppercase tracking-wide"
+            >
+                Xem các bài viết khác
+            </a>
+        </div>
+    </div>
+</section>

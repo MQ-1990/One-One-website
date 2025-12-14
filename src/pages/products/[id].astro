@@ -1,0 +1,141 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ProductDetail } from "../../components/react/ProductDetail";
+
+import imgKhoaiLangTim from "../../assets/products/khoai-lang-tim.png";
+import imgSuaNgo from "../../assets/products/sua-ngo.png";
+import imgPhoMaiNgo from "../../assets/products/pho-mai-ngo.png";
+import imgTaoBien from "../../assets/products/tao-bien.png";
+import imgBoNuongCanxi from "../../assets/products/bo-nuong-canxi.png";
+import imgTomNuong from "../../assets/products/tom-nuong.png";
+import imgBoNuong from "../../assets/products/bo-nuong.png";
+import imgThucDuong from "../../assets/products/thuc-duong.png";
+import imgNgotDiuCanxi from "../../assets/products/ngot-diu-canxi.png";
+import imgNgotDiu from "../../assets/products/ngot-diu.png";
+import imgPhoMaiSua from "../../assets/products/pho-mai-sua.png";
+
+export function getStaticPaths() {
+    const ALL_PRODUCTS = [
+        {
+            id: "bo-nuong-canxi",
+            name: "Bánh gạo vị bò nướng (+Canxi)",
+            category: "flavor",
+            image: imgBoNuongCanxi.src,
+        },
+        {
+            id: "ngot-diu-canxi",
+            name: "Bánh gạo vị ngọt dịu (+Canxi)",
+            category: "original",
+            image: imgNgotDiuCanxi.src,
+        },
+        {
+            id: "thuc-duong",
+            name: "Bánh gạo thực dưỡng",
+            category: "nutrition",
+            image: imgThucDuong.src,
+        },
+        {
+            id: "ngot-diu",
+            name: "Bánh gạo vị ngọt dịu",
+            category: "original",
+            image: imgNgotDiu.src,
+        },
+        {
+            id: "khoai-lang-tim",
+            name: "Bánh gạo khoai lang tím",
+            category: "nutrition",
+            image: imgKhoaiLangTim.src,
+            description:
+                "Bánh Gạo Khoai Lang Tím One One được làm từ những nguyên liệu nổi bật với gạo Japonica và khoai lang tím ngọt bùi tự nhiên.",
+        },
+        {
+            id: "pho-mai-sua",
+            name: "Bánh gạo vị phô mai sữa",
+            category: "flavor",
+            image: imgPhoMaiSua.src,
+        },
+        {
+            id: "pho-mai-ngo",
+            name: "Bánh gạo vị phô mai ngô",
+            category: "flavor",
+            image: imgPhoMaiNgo.src,
+        },
+        {
+            id: "sua-ngo",
+            name: "Bánh gạo vị sữa ngô",
+            category: "flavor",
+            image: imgSuaNgo.src,
+        },
+        {
+            id: "tao-bien",
+            name: "Bánh gạo vị tảo biển",
+            category: "flavor",
+            image: imgTaoBien.src,
+        },
+        {
+            id: "bo-nuong",
+            name: "Bánh gạo vị bò nướng",
+            category: "flavor",
+            image: imgBoNuong.src,
+        },
+        {
+            id: "tom-nuong",
+            name: "Bánh gạo vị tôm nướng",
+            category: "flavor",
+            image: imgTomNuong.src,
+        },
+    ];
+
+    return ALL_PRODUCTS.map((product) => ({
+        params: { id: product.id },
+        props: { product, allProducts: ALL_PRODUCTS },
+    }));
+}
+
+const { product, allProducts } = Astro.props;
+
+// Filter related (simple logic: same category or just random 3)
+const relatedProducts = allProducts
+    .filter((p) => p.id !== product.id)
+    .slice(0, 3);
+---
+
+<Layout title={`${product.name} - Sản phẩm One One`}>
+    <div class="bg-[#f3f0e4] min-h-screen pt-[150px] pb-20">
+        <div class="container mx-auto px-4">
+            <ProductDetail product={product} client:load />
+
+            {/* Related Products */}
+            <div class="mt-32">
+                <h2 class="text-[#124734] text-4xl font-bold text-center mb-16">
+                    Có thể bạn cũng muốn thử
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {
+                        relatedProducts.map((item) => (
+                            <div class="flex flex-col items-center group">
+                                <div class="relative w-full aspect-square mb-6">
+                                    <div class="absolute inset-4 bg-[#e7e0cd] rounded-[20px] -z-10 group-hover:scale-105 transition-transform duration-500" />
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        class="w-full h-full object-contain drop-shadow-xl group-hover:-translate-y-4 transition-transform duration-500"
+                                    />
+                                </div>
+                                <h3 class="text-[#124734] text-xl font-medium mb-4">
+                                    {item.name}
+                                </h3>
+                                <a
+                                    href={`/products/${item.id}`}
+                                    class="text-[#124734] font-medium border-b border-[#124734] pb-1 hover:text-[#da203a] hover:border-[#da203a] transition-colors"
+                                >
+                                    CHI TIẾT
+                                </a>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

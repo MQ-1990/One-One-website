@@ -1,0 +1,81 @@
+---
+import { Facebook, Instagram, Youtube } from "lucide-react";
+import imgLogo from "../assets/logo.png";
+import imgLogoSaleNoti1 from "../assets/sale-noti.png"; // Placeholder path
+---
+
+<footer class="bg-[#a40e23] text-[#f3f0e4] pt-20 pb-10 relative">
+  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    
+    {/* Column 1: Logo & Social */}
+    <div class="flex flex-col items-center lg:items-start">
+        <div class="w-[120px] mb-8">
+            <img src={imgLogo.src} alt="One One" class="w-full h-auto" />
+        </div>
+        <div class="flex gap-4 mb-8">
+            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#a40e23] transition-colors">
+                <Instagram size={20} />
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#a40e23] transition-colors">
+                <Facebook size={20} />
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#a40e23] transition-colors">
+                <Youtube size={20} />
+            </a>
+        </div>
+    </div>
+
+    {/* Column 2: Customer Support */}
+    <div>
+        <h3 class="text-2xl font-bold mb-6">Hỗ trợ khách hàng</h3>
+        <ul class="space-y-3 opacity-90">
+            <li><a href="/where-to-buy" class="hover:underline">Mua One One ở đâu?</a></li>
+            <li><a href="/faq" class="hover:underline">Câu hỏi thường gặp</a></li>
+            <li><a href="/customer-support" class="hover:underline">Hộp thư khách hàng</a></li>
+        </ul>
+    </div>
+
+    {/* Column 3: Policy */}
+    <div>
+        <h3 class="text-2xl font-bold mb-6">Chính sách</h3>
+        <ul class="space-y-3 opacity-90">
+            <li><a href="/where-to-buy" class="hover:underline">Hướng dẫn mua hàng</a></li>
+            <li><a href="#" class="hover:underline">Chính sách giao hàng</a></li>
+            <li><a href="#" class="hover:underline">Hình thức thanh toán</a></li>
+            <li><a href="#" class="hover:underline">Chính sách đổi trả</a></li>
+            <li><a href="#" class="hover:underline">Chính sách bảo mật thông tin</a></li>
+        </ul>
+    </div>
+
+    {/* Column 4: Hotline & Contact */}
+    <div>
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Hotline</h3>
+            <p class="text-3xl font-bold text-white mb-1">1800 555529</p>
+            <p class="opacity-80">Dành cho xuất khẩu: <br/>+84.903.660464</p>
+        </div>
+        
+        <div class="mb-8">
+            <h3 class="text-xl font-bold mb-4">Đối tác & Tuyển dụng</h3>
+            <ul class="space-y-2 opacity-90">
+                <li><a href="/partner" class="hover:underline">Đối tác & đại lý</a></li>
+                <li><a href="/career" class="hover:underline">Cơ hội nghề nghiệp</a></li>
+            </ul>
+        </div>
+        
+        <div class="w-[150px]">
+            <img src={imgLogoSaleNoti1.src} alt="Bo Cong Thuong" class="w-full h-auto" />
+        </div>
+    </div>
+  </div>
+
+  {/* Bottom Copyright */}
+  <div class="mt-16 pt-6 border-t border-white/10 text-center">
+    <p class="opacity-80 text-sm">
+        © Bánh gạo One One <span class="text-[#b8b8b8]"> - Phát triển web bởi GBE</span>
+    </p>
+  </div>
+
+  {/* Brown Strip at bottom */}
+  <div class="absolute bottom-0 left-0 w-full h-3 bg-[#936232]"></div>
+</footer>

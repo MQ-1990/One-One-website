@@ -1,0 +1,22 @@
+---
+import imgRectangle14 from "../assets/story-bg-1.png";
+import imgRectangle15 from "../assets/story-bg-2.png";
+---
+
+<section class="relative h-[600px] md:h-[700px] w-full overflow-hidden flex items-center justify-center">
+  {/* Background Images */}
+  <div class="absolute inset-0 z-0">
+    <img src={imgRectangle14.src} alt="Field" class="absolute inset-0 w-full h-full object-cover" />
+    <img src={imgRectangle15.src} alt="Farmer" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" />
+    <div class="absolute inset-0 bg-[#124734]/40 mix-blend-multiply"></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-4 text-center text-white">
+    <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-8 drop-shadow-lg max-w-4xl mx-auto">
+      Không chỉ là bánh gạo, mà là sứ mệnh vì sức khỏe cộng đồng và nâng tầm nông sản Việt.
+    </h2>
+    <p class="text-2xl font-light italic opacity-90">
+      - Bánh gạo One One -
+    </p>
+  </div>
+</section>

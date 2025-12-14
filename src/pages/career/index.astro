@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ChevronRight, MapPin } from "lucide-react";
+import imgBannerBg from "../../assets/banner.png";
+
+const jobs = [
+    { id: "1", title: "Nhân viên Marketing", location: "Hà Nội" },
+    { id: "2", title: "Chuyên viên phát triển sản phẩm", location: "Hà Nội" },
+    { id: "3", title: "Nhân viên tư vấn bán hàng", location: "TP HCM" },
+    { id: "4", title: "Công nhân sản xuất", location: "Long An" },
+    { id: "5", title: "Quản đốc phân xưởng sản xuất", location: "Long An" },
+];
+---
+
+<Layout title="Tuyển dụng - One One">
+    <div class="bg-[#fff5e5] min-h-screen">
+        {/* Banner */}
+        <section class="relative h-[400px] lg:h-[550px] w-full mb-12">
+            <img
+                src={imgBannerBg.src}
+                alt="Career Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div
+                class="relative container mx-auto h-full flex flex-col items-center justify-center text-white text-center"
+            >
+                <h2
+                    class="text-xl font-bold mb-4 uppercase tracking-widest text-[#f3f0e4]"
+                >
+                    Gia nhập gia đình One One
+                </h2>
+                <h1 class="text-5xl lg:text-7xl font-bold text-[#f3f0e4]">
+                    Tin tuyển dụng
+                </h1>
+            </div>
+        </section>
+
+        {/* Introduction */}
+        <section class="container mx-auto px-4 py-12 max-w-4xl">
+            <h2 class="text-[#124734] text-4xl font-bold mb-6">
+                Các vị trí đang tuyển dụng
+            </h2>
+            <p class="text-[#124734] text-lg leading-relaxed mb-12">
+                One One là nơi hội tụ những con người tài năng, cùng chung niềm
+                đam mê mang đến những sản phẩm chất lượng từ nông sản Việt.
+                Chúng tôi đang tìm kiếm những đồng đội mới cho hành trình này.
+                Cùng khám phá các vị trí tuyển dụng và ứng tuyển nhé!
+            </p>
+
+            {/* Job List */}
+            <div class="border-t border-[#124734]">
+                {
+                    jobs.map((job) => (
+                        <a
+                            href={`/career/${job.id}`}
+                            class="flex items-center justify-between py-6 border-b border-[#124734] group hover:bg-[#124734]/5 transition-colors px-4 -mx-4 rounded-lg"
+                        >
+                            <span class="text-[#124734] text-lg lg:text-xl font-bold group-hover:text-[#da203a] transition-colors">
+                                {job.title}
+                            </span>
+                            <div class="flex items-center gap-8">
+                                <span class="flex items-center gap-2 text-[#799381] font-light">
+                                    <MapPin size={18} />
+                                    {job.location}
+                                </span>
+                                <ChevronRight className="text-[#124734]" />
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </section>
+    </div>
+</Layout>

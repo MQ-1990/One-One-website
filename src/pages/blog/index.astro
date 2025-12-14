@@ -1,0 +1,194 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import imgBannerBg from "../../assets/banner.png";
+import imgBlog032 from "../../assets/blog/blog-1.png";
+import imgBlog021 from "../../assets/blog/blog-2.png";
+import imgBlog011 from "../../assets/blog/blog-3.png";
+import imgBlog031 from "../../assets/blog/blog-4.png";
+import imgBlog22 from "../../assets/blog/blog-5.png";
+import imgBlog12 from "../../assets/blog/blog-6.png";
+import imgBlog32 from "../../assets/blog/blog-7.png";
+import imgBlog23 from "../../assets/blog/blog-8.png";
+import imgBlog13 from "../../assets/blog/blog-9.png";
+
+const categories = [
+    "Tất cả",
+    "Tin One One",
+    "Càng ăn càng ngon",
+    "Cộng đồng & Phát triển bền vững",
+];
+const blogs = [
+    {
+        id: 1,
+        title: "Bánh gạo One One và hành trình phát triển bền vững",
+        img: imgBlog032,
+    },
+    {
+        id: 2,
+        title: "Phản hồi từ người tiêu dùng: Bánh gạo One One có gì đặc biệt?",
+        img: imgBlog021,
+    },
+    {
+        id: 3,
+        title: "Trẻ Em Có Ăn Được Bánh Gạo One One Không?",
+        img: imgBlog011,
+        link: "/blog/detail",
+    }, // Featured one links here for demo
+    {
+        id: 4,
+        title: "Thương hiệu OneOne ra mắt bánh gạo khoai lang tím",
+        img: imgBlog031,
+    },
+    {
+        id: 5,
+        title: "OneOne trao 300 tấn gạo cho 5 tỉnh miền núi phía Bắc",
+        img: imgBlog22,
+    },
+    { id: 6, title: "Dây chuyền sản xuất bánh gạo OneOne", img: imgBlog12 },
+    {
+        id: 7,
+        title: "OneOne trao 300 tấn gạo cho 5 tỉnh miền núi phía Bắc",
+        img: imgBlog32,
+    },
+    {
+        id: 8,
+        title: "Khám phá bên trong nhà máy bánh gạo One One",
+        img: imgBlog23,
+    },
+    {
+        id: 9,
+        title: "OneOne trao 300 tấn gạo cho 5 tỉnh miền núi phía Bắc",
+        img: imgBlog13,
+    },
+];
+---
+
+<Layout title="Bản tin One One">
+    <div class="bg-[#fff5e5] min-h-screen">
+        {/* Banner */}
+        <section class="relative h-[400px] w-full">
+            <img
+                src={imgBannerBg.src}
+                alt="Blog Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div
+                class="relative container mx-auto h-full flex flex-col items-center justify-center text-white text-center"
+            >
+                <h2 class="text-xl font-bold mb-2 uppercase tracking-widest">
+                    Khám phá
+                </h2>
+                <h1 class="text-5xl lg:text-7xl font-bold">Bản tin One One</h1>
+            </div>
+        </section>
+
+        {/* Featured / Hot News */}
+        <section class="bg-[#a2d8cf] py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="w-full lg:w-1/2">
+                        <div
+                            class="rounded-2xl overflow-hidden shadow-xl aspect-video"
+                        >
+                            <img
+                                src={imgBlog032.src}
+                                alt="Featured"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 text-[#124734]">
+                        <span class="text-lg font-medium mb-2 block"
+                            >Càng ăn càng ngon</span
+                        >
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                            Trẻ em có ăn được bánh gạo One One?
+                        </h2>
+                        <p class="text-lg mb-8 line-clamp-3">
+                            Trẻ em hoàn toàn có thể ăn bánh gạo One One nhờ
+                            nguồn nguyên liệu tự nhiên, quy trình sản xuất an
+                            toàn, và hương vị phong phú. Tuy nhiên, bố mẹ nên
+                            chú ý đối tượng trẻ dưới 1 tuổi...
+                        </p>
+                        <a
+                            href="/blog/detail"
+                            class="inline-block border-b-2 border-[#124734] pb-1 text-lg font-bold hover:text-[#da203a] hover:border-[#da203a] transition-colors"
+                        >
+                            Tìm hiểu thêm
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Blog Grid */}
+        <section class="py-20 container mx-auto px-4">
+            {/* Categories */}
+            <div
+                class="flex flex-wrap justify-center gap-8 mb-16 border-b border-[#124734]/10 pb-4"
+            >
+                {
+                    categories.map((cat, index) => (
+                        <button
+                            class={`text-lg font-medium transition-colors ${index === 0 ? "text-[#124734] font-bold border-b-2 border-[#124734]" : "text-[#124734]/60 hover:text-[#124734]"}`}
+                        >
+                            {cat}
+                        </button>
+                    ))
+                }
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+            >
+                {
+                    blogs.map((blog) => (
+                        <a
+                            href={blog.link || "/blog/detail"}
+                            class="group cursor-pointer"
+                        >
+                            <div class="rounded-2xl overflow-hidden shadow-md mb-4 aspect-[4/3]">
+                                <img
+                                    src={blog.img.src}
+                                    alt={blog.title}
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <h3 class="text-[#124734] text-xl font-bold leading-tight group-hover:text-[#da203a] transition-colors">
+                                {blog.title}
+                            </h3>
+                        </a>
+                    ))
+                }
+            </div>
+
+            {/* Pagination */}
+            <div class="flex justify-center items-center gap-4">
+                <button
+                    class="w-10 h-10 rounded-full border border-[#124734] flex items-center justify-center text-[#124734] hover:bg-[#124734] hover:text-white transition-colors disabled:opacity-50"
+                >
+                    <ArrowLeft size={20} />
+                </button>
+                <button
+                    class="w-10 h-10 rounded-full bg-[#124734] text-white font-bold flex items-center justify-center"
+                    >1</button
+                >
+                <button
+                    class="w-10 h-10 rounded-full text-[#124734]/60 font-bold hover:text-[#124734]"
+                    >2</button
+                >
+                <button
+                    class="w-10 h-10 rounded-full text-[#124734]/60 font-bold hover:text-[#124734]"
+                    >3</button
+                >
+                <button
+                    class="w-10 h-10 rounded-full border border-[#124734] flex items-center justify-center text-[#124734] hover:bg-[#124734] hover:text-white transition-colors"
+                >
+                    <ArrowRight size={20} />
+                </button>
+            </div>
+        </section>
+    </div>
+</Layout>

@@ -1,0 +1,263 @@
+---
+import Layout from "../layouts/Layout.astro";
+import imgBannerBg01 from "../assets/banner-bg.png";
+import imgRectangle39 from "../assets/story/rect39.png";
+import imgRectangle42 from "../assets/story/rect42.png";
+import imgRectangle40 from "../assets/story/rect40.png";
+
+// Journey Images
+import img2007 from "../assets/story/2007.png";
+import img2013 from "../assets/story/2013.png";
+import img2015 from "../assets/story/2015.png";
+import img2016 from "../assets/story/2016.png";
+import img2016b from "../assets/story/2016b.png";
+import img2017 from "../assets/story/2017.png";
+import img2018 from "../assets/story/2018.png";
+import img2020 from "../assets/story/2020.png";
+import img2023 from "../assets/story/2023.png";
+
+const journeyItems = [
+    {
+        year: "2007",
+        title: "THÀNH LẬP",
+        desc: "Là đơn vị sản xuất bánh gạo đầu tiên quy mô lớn tại Việt Nam, cho ra mắt dòng truyền thống với 03 vị Ngọt dịu, Tôm nướng, Bò nướng tới nay vẫn được người tiêu dùng ưa chuộng",
+        img: img2007,
+    },
+    {
+        year: "2013",
+        title: "CÔNG NGHỆ NHẬT BẢN",
+        desc: "One One đánh dấu cột mốc hợp tác với Kameda – thương hiệu bánh gạo hàng đầu Nhật Bản – để nâng cấp công nghệ sản xuất, mang lại chất lượng vượt trội cho từng sản phẩm.",
+        img: img2013,
+    },
+    {
+        year: "2015",
+        title: "NHÀ MÁY MIỀN TRUNG",
+        desc: "One One thành lập thêm nhà máy tại Huế để đáp ứng nhu cầu ngày càng cao của thị trường.",
+        img: img2015,
+    },
+    {
+        year: "2016",
+        title: "AUDIT TẠI ĐOÀN XUÂN",
+        desc: "Với công nghệ sản xuất hiện đại cùng tính tuân thủ bảo vệ sức khỏe người tiêu dùng, One One vinh nhận được chứng nhận hàng Việt Nam chất lượng cao.",
+        img: img2016b,
+        subtitle: "đến nay",
+    },
+    {
+        year: "2016",
+        title: "PHÁT TRIỂN SẢN PHẨM",
+        desc: "Mở rộng danh mục sản phẩm. Ra mắt các dòng Bánh Gạo mới với các hương vị đặc trưng như Phô Mai Ngô và Sữa Ngô.",
+        img: img2016,
+    },
+    {
+        year: "2017",
+        title: "SỐ 1 VIỆT NAM",
+        desc: "One One được bình chọn là nhãn hiệu bánh gạo số 1 Việt Nam, theo khảo sát của Kantar với hơn 4.000 hộ gia đình tại các thành phố lớn.",
+        img: img2017,
+    },
+    {
+        year: "2018",
+        title: "NHÀ MÁY TẠI MIỀN NAM",
+        desc: "One One thành lập nhà máy tại Đồng Tháp, Long An. Đánh dấu độ phủ sản phẩm và khả năng cung ứng cho toàn bộ thị trường Việt Nam",
+        img: img2018,
+    },
+    {
+        year: "2020",
+        title: "VƯƠN RA THẾ GIỚI",
+        desc: "One One - S���n phẩm của người Việt và nông sản Việt đã có mặt tại 12 quốc gia trên thế giới.",
+        img: img2020,
+    },
+    {
+        year: "2023",
+        title: "ĐỘT PHÁ",
+        desc: "Ra mắt bộ đôi Bánh Gạo Thực Dưỡng và Bánh Gạo Khoai Lang Tím, thơm ngon, giàu dinh dưỡng.",
+        img: img2023,
+    },
+];
+---
+
+<Layout title="Câu chuyện One One - One One">
+    <div class="bg-[#fff5e5] w-full overflow-hidden">
+        {/* Banner */}
+        <section class="relative h-[600px] w-full">
+            <img
+                src={imgBannerBg01.src}
+                alt="Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div
+                class="relative container mx-auto h-full flex items-end pb-20 justify-center"
+            >
+                <div
+                    class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-[#124734] font-bold text-xl bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg"
+                >
+                    <div class="flex flex-col items-center">
+                        <div class="text-[#ee1433] text-3xl mb-1">Số 1</div>
+                        <div>Thương hiệu bánh gạo Việt Nam (Kantar)</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-[#ee1433] text-3xl mb-1">17 năm</div>
+                        <div>đồng hành cùng người tiêu dùng Việt</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-[#ee1433] text-3xl mb-1">140,000</div>
+                        <div>điểm bán toàn quốc</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-[#ee1433] text-3xl mb-1">
+                            12 quốc gia
+                        </div>
+                        <div>trên thế giới</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Introduction */}
+        <section class="py-20 container mx-auto px-4 text-center">
+            <h2 class="text-[#124734] text-4xl font-bold mb-8">
+                Câu chuyện One One
+            </h2>
+            <div
+                class="max-w-4xl mx-auto text-[#124734] text-lg leading-relaxed"
+            >
+                Với gần 2 thập kỷ đồng hành cùng người tiêu dùng Việt, One One
+                tự hào là <span class="font-bold"
+                    >thương hiệu bánh gạo số 1</span
+                > được chọn mua tại Việt Nam. Là thương hiệu đi đầu thị trường, One
+                One luôn tiên phong trong cải tiến và đổi mới. Sản phẩm của chúng
+                tôi, từ nguồn nguyên liệu <span class="font-bold"
+                    >Nông Sản Việt Nam</span
+                > tự nhiên và chất lượng cao, đã chinh phục hơn <span
+                    class="font-bold">140,000 điểm bán</span
+                > trên toàn quốc và xuất khẩu đến <span class="font-bold"
+                    >12 quốc gia</span
+                > trên thế giới.
+            </div>
+        </section>
+
+        {/* Mission (Why) */}
+        <section class="py-20 bg-[#dbf2c3]">
+            <div class="container mx-auto px-4">
+                <h2 class="text-[#124734] text-4xl font-bold text-center mb-16">
+                    Sứ mệnh của One One gắn kết với<br />thiên nhiên, sức khỏe,
+                    cộng đồng
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Item 1 */}
+                    <div class="flex flex-col gap-6">
+                        <div class="h-[400px] rounded-[20px] overflow-hidden">
+                            <img
+                                src={imgRectangle39.src}
+                                alt=""
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+                        <h3 class="text-[#124734] text-2xl font-bold h-[64px]">
+                            Tinh túy từ hạt gạo và thiên nhiên Việt Nam
+                        </h3>
+                        <p class="text-[#124734] text-lg">
+                            One One, khởi nguồn từ chữ '<b>O</b>' - biểu tượng
+                            của hạt gạo Việt, kết tinh tinh túy từ những cánh
+                            đồng lúa tự nhiên.
+                        </p>
+                    </div>
+                    {/* Item 2 */}
+                    <div class="flex flex-col gap-6">
+                        <div class="h-[400px] rounded-[20px] overflow-hidden">
+                            <img
+                                src={imgRectangle40.src}
+                                alt=""
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+                        <h3 class="text-[#124734] text-2xl font-bold h-[64px]">
+                            Tiên phong chất lượng, đa dạng hương vị
+                        </h3>
+                        <p class="text-[#124734] text-lg">
+                            Truyền cảm hứng bởi ánh mặt trời tỏa sáng như thông
+                            điệp Logo truyền tải, One One tiên phong nâng tầm
+                            chất lượng bánh gạo.
+                        </p>
+                    </div>
+                    {/* Item 3 */}
+                    <div class="flex flex-col gap-6">
+                        <div class="h-[400px] rounded-[20px] overflow-hidden">
+                            <img
+                                src={imgRectangle42.src}
+                                alt=""
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+                        <h3 class="text-[#124734] text-2xl font-bold h-[64px]">
+                            Gắn kết cộng đồng, hướng đến bền vững
+                        </h3>
+                        <p class="text-[#124734] text-lg">
+                            Gần hai thập kỷ gắn bó cùng hàng triệu gia đình
+                            Việt, One One không chỉ chú trọng nâng tầm nông sản
+                            Việt mà còn bảo vệ sức khỏe cộng đồng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Journey Timeline */}
+        <section class="py-20 container mx-auto px-4">
+            <h2 class="text-[#124734] text-4xl font-bold text-center mb-16">
+                One One và hành trình vươn ra thế giới
+            </h2>
+            <div class="relative">
+                {/* Vertical Line */}
+                <div
+                    class="absolute left-[15px] lg:left-1/2 top-0 bottom-0 w-px bg-[#124734]"
+                >
+                </div>
+
+                <div class="flex flex-col gap-12">
+                    {
+                        journeyItems.map((item, index) => (
+                            <div
+                                class={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+                            >
+                                {/* Image Side */}
+                                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end pl-8 lg:pl-0">
+                                    <div
+                                        class={`w-full max-w-[300px] lg:max-w-[350px] rounded-2xl overflow-hidden shadow-lg ${index % 2 !== 0 ? "lg:mr-auto" : "lg:ml-auto"}`}
+                                    >
+                                        <img
+                                            src={item.img.src}
+                                            alt={item.year}
+                                            class="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Marker */}
+                                <div class="absolute left-[15px] lg:left-1/2 w-4 h-4 bg-[#124734] rounded-full -translate-x-[7px] lg:-translate-x-1/2 z-10" />
+
+                                {/* Text Side */}
+                                <div
+                                    class={`w-full lg:w-1/2 pl-12 lg:pl-0 ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}
+                                >
+                                    <h3 class="text-[#124734] font-bold text-xl uppercase mb-1">
+                                        {item.title}
+                                    </h3>
+                                    <div class="text-[#124734] font-bold text-5xl mb-4">
+                                        {item.year}{" "}
+                                        <span class="text-2xl font-normal">
+                                            {item.subtitle}
+                                        </span>
+                                    </div>
+                                    <p class="text-[#124734] text-lg max-w-md inline-block">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SearchResults } from "../components/react/SearchResults";
+---
+
+<Layout title="Tìm kiếm - One One">
+    <div class="bg-[#fff5e5] min-h-screen pt-[80px] lg:pt-[120px]">
+        <SearchResults client:load />
+    </div>
+</Layout>

@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Mail, Phone, MapPin } from "lucide-react";
+import imgContactBanner from "../assets/contact-banner.png";
+---
+
+<Layout title="Liên hệ - One One">
+    <div class="bg-[#fff5e5] min-h-screen">
+       <section class="relative h-[400px]">
+            <img src={imgContactBanner.src} alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="relative container mx-auto h-full flex flex-col items-center justify-center text-white">
+                <h1 class="text-5xl font-bold mb-4">Liên hệ</h1>
+                <p class="text-lg">Chúng tôi luôn lắng nghe bạn</p>
+            </div>
+       </section>
+
+       <section class="py-20 container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-[#124734] text-3xl font-bold mb-8">Thông tin liên hệ</h2>
+                    <div class="space-y-8 text-[#124734]">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-[#a2d8cf] rounded-full flex items-center justify-center flex-shrink-0">
+                                <MapPin size={24} />
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-1">Trụ sở chính</h3>
+                                <p>KCN Nam Thăng Long, Phường Thụy Phương, Quận Bắc Từ Liêm, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                             <div class="w-12 h-12 bg-[#a2d8cf] rounded-full flex items-center justify-center flex-shrink-0">
+                                <Phone size={24} />
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-1">Hotline</h3>
+                                <p class="text-2xl font-bold">1800 555529</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                             <div class="w-12 h-12 bg-[#a2d8cf] rounded-full flex items-center justify-center flex-shrink-0">
+                                <Mail size={24} />
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-1">Email</h3>
+                                <p>cskh@oneone.com.vn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h2 class="text-[#124734] text-2xl font-bold mb-6">Gửi thắc mắc cho chúng tôi</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[#124734] font-medium mb-2">Họ và tên</label>
+                                <input type="text" class="w-full border border-[#124734]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#124734]" placeholder="Nhập họ và tên" />
+                            </div>
+                            <div>
+                                <label class="block text-[#124734] font-medium mb-2">Số điện thoại</label>
+                                <input type="tel" class="w-full border border-[#124734]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#124734]" placeholder="Nhập số điện thoại" />
+                            </div>
+                        </div>
+                        <div>
+                             <label class="block text-[#124734] font-medium mb-2">Email</label>
+                             <input type="email" class="w-full border border-[#124734]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#124734]" placeholder="Nhập email của bạn" />
+                        </div>
+                        <div>
+                             <label class="block text-[#124734] font-medium mb-2">Nội dung</label>
+                             <textarea rows="4" class="w-full border border-[#124734]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#124734]" placeholder="Nội dung cần liên hệ"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#124734] text-white font-bold py-4 rounded-lg hover:bg-[#0e3628] transition-colors">
+                            GỬI THÔNG TIN
+                        </button>
+                    </form>
+                </div>
+            </div>
+       </section>
+    </div>
+</Layout>
